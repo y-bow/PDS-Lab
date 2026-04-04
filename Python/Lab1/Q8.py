@@ -1,3 +1,4 @@
+#Remove Duplicates
 a = input("Enter a string : ")
 b = ""
 for i in a:
