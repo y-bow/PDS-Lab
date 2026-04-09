@@ -1,13 +1,18 @@
 def is_happy(n):
-    while True:
+    if n == 1:
+        return True
+    if n == 4:
+        return False
+    
+    add = 0
+    while n > 0:
         digit = n % 10
-        sq = digit*digit
-        n = n / 10
-        add +=sq
-        if add == 1:
-            return 
-        else:
-            is_happy(add)
+        add += digit*digit
+        n //= 10
+    return is_happy(add)
 
 n = int(input("Enter a number : "))
-is_happy(n)
+if is_happy(n) == True:
+    print("It is a happy number")
+else:
+    print("It is a sad number")
